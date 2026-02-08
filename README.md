@@ -21,6 +21,6 @@ Welcome to my personal Python repository! This space serves as a central hub for
 ### 🤝 Connect with Me
 If you find these scripts useful or have suggestions for optimization, feel free to connect!
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]www.linkedin.com/in/
 gulshan-techy
-)
+
