@@ -59,7 +59,7 @@ Strings are stored as an ordered list of characters. We can access them using an
 
 * **Positive Index:** Starts from `0` (Left to Right).
 * **Negative Index:** Starts from `-1` (Right to Left).
-
+```
 text = "PYTHON"
 # P  Y  T  H  O  N
 # 0  1  2  3  4  5  (Positive Index)
@@ -67,21 +67,22 @@ text = "PYTHON"
 
 print(text[0])   # Output: 'P'
 print(text[-1])  # Output: 'N'
+```
 
 #Indexing :- Indexing means accessing individual characters of a string using their position (index). In Python, indexing starts from 0 for the first character .Negative indexing allows access from the end of the string.
-
+```
 s = "This is Python"
 print(s[0])    # 'T' → first character
 print(s[5])    # 'i' → sixth character
 print(s[-1])   # 'n' → last character
 print(s[-6])   # 'P' → sixth from the end
-
+```
 #Slicing :- Slicing means extracting a substring from the original string. 
 Syntax: string[start:end:step]
 start→ index where slice begins (inclusive)
 end → index where slice ends (exclusive)
 step → interval (default is 1)
-
+```
 s = "This is Python"
 print(s[0:4])     # "This" → characters from index 0 to 3
 print(s[5:7])     # "is"   → characters from index 5 to 6
@@ -89,8 +90,9 @@ print(s[:4])      # "This" → from start to index 3
 print(s[8:])      # "Python" → from index 8 to end
 print(s[::2])     # "Ti sPto" → every 2nd character
 print(s[::-1])    # "nohtyP si sihT" → reversed string
-
+```
 # Basic String Operation
+```
 s = "This is Python"
 print(len(s))          # Length of string → 13
 print(s.upper())       # Convert to uppercase → "THIS IS PYTHON"
@@ -104,3 +106,4 @@ words = s.split()      # Split into list → ['This', 'is', 'Python']
 print(words)
 joined = "-".join(words)  # Join with separator → "This-is-Python"
 print(joined)
+```
