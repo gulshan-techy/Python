@@ -24,7 +24,7 @@ In Python, a variable is a **Reference** (a name tag) that points to an object i
 When you write a = 10:
 Python creates an object 10 in memory.
 It puts a tag named a on it. If you write b = 10, Python doesn't create a new object. It just puts another tag b on the same object to save memory! 🤯
-
+```
 a = 10
 b = 10
 
