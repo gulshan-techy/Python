@@ -60,7 +60,6 @@ Strings are stored as an ordered list of characters. We can access them using an
 * **Positive Index:** Starts from `0` (Left to Right).
 * **Negative Index:** Starts from `-1` (Right to Left).
 
-```python
 text = "PYTHON"
 # P  Y  T  H  O  N
 # 0  1  2  3  4  5  (Positive Index)
