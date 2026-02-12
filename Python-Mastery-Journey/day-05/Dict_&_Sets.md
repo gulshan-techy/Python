@@ -3,7 +3,7 @@
 ## Q. What are Dictionaries & Sets?
 ##  Ans. Up until now, we accessed data using numeric indexes (e.g., list[0]). But what if we want to access data using a Name (Key)? Or what if we need to store a list of items where Duplicates are NOT allowed?That's where Dictionaries (Hash Maps) and Sets come in. These are the most powerful data structures for real-world engineering.
 
-## 1. Python Dictionaries (Key-Value Pairs)A Dictionary is an unordered collection of items stored as Key: Value pairs. It is Mutable, meaning you can change the values after creation. It is widely used for JSON data and Configuration management.
+## 1. Python ***Dictionaries*** (Key-Value Pairs)A Dictionary is an unordered collection of items stored as Key: Value pairs. It is Mutable, meaning you can change the values after creation. It is widely used for JSON data and Configuration management.
 ```
 Syntax :- Curly Braces {key: value}
 ```
@@ -49,7 +49,7 @@ server_config.update({"active": True, "env": "Production"})
 Removing Items removed_val = server_config.pop("port") # Removes 'port'
 print(server_config)
 ```
-## 2. Python Sets (Unique Collections)A Set is an unordered collection of Unique items. It automatically removes duplicates. It is highly optimized for mathematical operations like Union and Intersection.
+## 2. Python ***Sets*** (Unique Collections)A Set is an unordered collection of Unique items. It automatically removes duplicates. It is highly optimized for mathematical operations like Union and Intersection.
 ```
 Syntax :- Curly Braces {item1, item2} or set()
 ```
