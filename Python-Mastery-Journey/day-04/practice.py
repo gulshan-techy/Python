@@ -130,13 +130,31 @@ print(tup.count(2))   # Output: 2
 print(tup.index(3))   # Output: 3
 
 
-## 3. THE ENGINEERING INSIGHT (Memory)
 
-print("\n--- C. MEMORY COMPARISON ---")
-list_data = [1, 2, 3, 4, 5]
-tuple_data = (1, 2, 3, 4, 5)
+
+# 3. THE ENGINEERING INSIGHT (Memory & Speed)
+
+print("\n--- C. PERFORMANCE ENGINEERING ---")
+
+# A. Memory Check (Size Comparison)
+# We are creating large datasets to see the difference clearly
+list_data = [0, 1, 2, "Python", True] * 1000 
+tuple_data = (0, 1, 2, "Python", True) * 1000
 
 print(f"List Memory:  {sys.getsizeof(list_data)} bytes")
 print(f"Tuple Memory: {sys.getsizeof(tuple_data)} bytes")
-print("✅ Conclusion: Tuples are more memory efficient!")
+
+# B. Speed Check (Creation Time)
+# Checking how much time it takes to create 1 Million Lists vs Tuples
+# We use timeit because it runs the code multiple times to get an average result
+list_time = timeit.timeit(stmt="[1, 2, 3, 4, 5]", number=1000000)
+tuple_time = timeit.timeit(stmt="(1, 2, 3, 4, 5)", number=1000000)
+
+print(f"\nList Creation Time (1M times):  {list_time:.4f} sec")
+print(f"Tuple Creation Time (1M times): {tuple_time:.4f} sec")
+
+# C. Conclusion
+# Calculate percentage difference
+diff = ((list_time - tuple_time) / list_time) * 100
+print(f"\n✅ Conclusion: Tuples are {diff:.2f}% FASTER and take LESS memory!")
 
