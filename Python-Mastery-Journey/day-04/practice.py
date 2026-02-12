@@ -128,3 +128,15 @@ tup = (1, 2, 2, 3, 4)
 
 print(tup.count(2))   # Output: 2
 print(tup.index(3))   # Output: 3
+
+
+## 3. THE ENGINEERING INSIGHT (Memory)
+
+print("\n--- C. MEMORY COMPARISON ---")
+list_data = [1, 2, 3, 4, 5]
+tuple_data = (1, 2, 3, 4, 5)
+
+print(f"List Memory:  {sys.getsizeof(list_data)} bytes")
+print(f"Tuple Memory: {sys.getsizeof(tuple_data)} bytes")
+print("✅ Conclusion: Tuples are more memory efficient!")
+
