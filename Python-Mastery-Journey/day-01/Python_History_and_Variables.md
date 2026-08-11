@@ -30,7 +30,7 @@ b = 10
 
 print(id(a))  # memory address of object 10
 print(id(b))  # same as id(a)
-
+```
 
 ### 🔹 How to Define?
 Python is **Dynamically Typed**, meaning you don't need to declare the type (e.g., `int x`). The Python Interpreter infers it at runtime.
@@ -40,3 +40,4 @@ user_name = "Gulshan"  # String
 server_count = 5       # Integer
 is_active = True       # Boolean
 cpu_load = 45.5        # Float
+````
