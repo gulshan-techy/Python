@@ -1,6 +1,6 @@
 # A. Creating & Accessing Lists
 
-# 1. Creating Lists
+# 1. Creating Lists.
 tools = ["Docker", "Kubernetes", "Jenkins", "Terraform", "Ansible"]
 
 # 2. Accessing Items (Indexing)
