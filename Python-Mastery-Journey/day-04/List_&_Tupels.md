@@ -1,6 +1,6 @@
 # 📦 Day 4: Data Collections - Lists & Tuples
 ## Q. What are Collections?
-## Ans. Up until now, we used variables to store single values (e.g., x = 10). But to store multiple items (like 100 IP addresses or 50 filenames) in a single variable, Python provides built-in data structures called Collections.
+## Ans. Up until now, we used variables to store single values (e.g., x = 10). But to store multiple items (like 100 IP addresses or 50 filenames) in a single variable, Python provides built-in data structures called Collections..
 
 ## 1. Python Lists (The Flexible Container)
 #### A List is an ordered collection of items. It is Mutable, meaning you can modify it (add, delete, or change items) after creation.
