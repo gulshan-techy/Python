@@ -1,7 +1,7 @@
 import sys
 import timeit
 
-# A. PYTHON DICTIONARIES (Key-Value Pairs)
+# A. PYTHON DICTIONARIES  (Key-Value Pairs)
 
 print("\n--- A. DICTIONARY OPERATIONS ---")
 
