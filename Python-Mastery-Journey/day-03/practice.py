@@ -1,5 +1,5 @@
 # 1. Arithmetic Operators
-print("\n--- 1. Arithmetic Operations ---")
+print("\n--- 1. Arithmetic Operations ----")
 x, y = 10, 3
 print(f"Addition (10 + 3): {x + y}")
 print(f"Subtraction (10 - 3): {x - y}")
