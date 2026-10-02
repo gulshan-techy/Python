@@ -1,50 +1,70 @@
-# 🐍 Day 17: File Handling in Python (Part 3) - Advanced Modes
+# 🐍 Day 17: System & Process Monitoring with psutil (Part 1)
 
 ## 📌 Overview
-In our previous file handling sessions, we mastered the basics of Reading (`'r'`), Writing (`'w'`), and Appending (`'a'`). 
+So far, we have learned how to handle files and store data. But what if we want our Python scripts to look under the hood of our computer? How do we check how much RAM is being used, or what the current CPU load is?
 
-But what if you want to read an image file instead of a text file? Or what if you want to safely create a file without accidentally deleting an existing one? Today, I explored Python's **Advanced File Modes**.
+Today, I started exploring **`psutil` (Process and System Utilities)**. It is a fantastic third-party Python library used for retrieving information on system hardware utilization and running processes.
 
 ---
 
 ## 🛠️ Concepts Learned
 
-### 1. Exclusive Creation Mode (`'x'`)
-We know that opening a file in `'w'` (Write) mode completely erases its old data. This can be dangerous! 
-If you want to create a new file, but want to **guarantee** that you don't accidentally overwrite an existing file with the same name, you use the `'x'` mode.
-
-*   If the file **does not** exist: Python creates it.
-*   If the file **already** exists: Python throws an `FileExistsError` and stops!
-
+### 1. Installing `psutil`
+Because `psutil` is a third-party library (not built into Python by default), we first need to install it via the terminal using `pip`:
 ```
-# Safely trying to create a file
-try:
-    with open('important_data.txt', 'x') as f:
-        f.write("This is a brand new file!")
-    print("File created successfully.")
-except FileExistsError:
-    print("Error: A file with this name already exists! Aborting.")
+pip install psutil
 ```
 
-### 2. Text vs. Binary Mode ('t' vs 'b')
-In computing, files generally fall into two categories:
+### 2. Checking CPU Usage
+The CPU is the brain of the computer. We can easily check how many cores our system has and what percentage of the CPU is currently being utilized.
+```
+import psutil
 
-Text Files: Contain readable characters (like .txt, .py).
+# Get total physical and logical CPU cores
+cpu_count = psutil.cpu_count(logical=True)
+print("Total CPU Cores:", cpu_count)
 
-Binary Files: Contain compiled data (like .jpg images, .pdf documents, or .mp3 audio).
+# Get current CPU usage percentage (measured over 1 second)
+cpu_usage = psutil.cpu_percent(interval=1)
+print(f"Current CPU Usage: {cpu_usage}%")
+```
+3. Checking Memory (RAM) Usage
+RAM is your computer's short-term memory. We can fetch total, available, and used memory metrics and convert bytes into Gigabytes (GB) for readability.
+```
+import psutil
 
-By default, when you use 'r' or 'w', Python silently treats it as 'rt' (Read Text) or 'wt' (Write Text).
+# Get virtual memory statistics
+memory = psutil.virtual_memory()
 
-### 3. Handling Binary Files ('rb', 'wb')
-If you try to read a JPEG image using normal text mode, Python will crash because it doesn't understand image pixels as text characters.
-To interact with non-text files, we must append a 'b' (Binary) to our mode.
+# Convert bytes to Gigabytes (1 GB = 1024^3 bytes)
+total_gb = memory.total / (1024 ** 3)
+available_gb = memory.available / (1024 ** 3)
+used_percent = memory.percent
+
+print(f"Total RAM: {total_gb:.2f} GB")
+print(f"Available RAM: {available_gb:.2f} GB")
+print(f"RAM Usage: {used_percent}%")
+```
+
+4. Checking Disk Storage Usage
+We can also check how much storage space is left on our hard drive or SSD.
 
 ```
-# Reading an image file (Binary Mode)
-# Notice the 'rb' instead of 'r'
-with open('profile_picture.jpg', 'rb') as f:
-    image_data = f.read()
-    print("Image data loaded successfully in binary format!")
+import psutil
 
-# You can now write this binary data to a new file using 'wb' (Write Binary)
+# Get disk usage statistics (use '/' for Linux/Mac or 'C:\\' for Windows)
+disk = psutil.disk_usage('/')
+
+total_disk = disk.total / (1024 ** 3)
+free_disk = disk.free / (1024 ** 3)
+disk_percent = disk.percent
+
+print(f"Total Disk Space: {total_disk:.2f} GB")
+print(f"Free Disk Space: {free_disk:.2f} GB")
+print(f"Disk Usage: {disk_percent}%")
 ```
+
+💡 Summary
+With psutil, Python gives us direct visibility into our machine's hardware health. In Part 1, we learned how to monitor the core pillars of any system: CPU, RAM, and Disk Storage.
+
+
