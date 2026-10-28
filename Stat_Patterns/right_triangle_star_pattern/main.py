@@ -1,6 +1,6 @@
-num = 5
+num = 6
 
-for i in range(num, 0, -1):
-    spaces = num - i
-    stars = 2 * i - 1
-    print(" " * spaces + "*" * stars)
+for i in range(1, num + 1):
+    for j in range(i):
+        print("*", end=" ")
+    print()
