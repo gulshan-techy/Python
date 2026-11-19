@@ -1,4 +1,4 @@
-# Day 06 – AWS S3 Advanced Operations Using Python & Boto3
+# Day 06 – AWS S3 Delete Operation Using Python & Boto3 and explore some more concepts
 
 ## Overview
 
